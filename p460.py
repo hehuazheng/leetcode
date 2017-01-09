@@ -1,5 +1,3 @@
-import time
-
 class LFUCache(object):
 
     def __init__(self, capacity):
@@ -9,14 +7,20 @@ class LFUCache(object):
         self.capacity=capacity
         self.cache={}
         self.freq={}
-        self.visitTime={}
+        self.times={}
 
     def get(self, key):
         """
         :type key: int
         :rtype: int
         """
-        return self.cache[key]
+        if key in self.cache:
+            occurency=self.freq[key]
+            self.times[occurency].remove(key)
+            self.times[occurency].append(key)
+            return self.cache[key]
+        else:
+            return -1
 
     def put(self, key, value):
         """
@@ -24,31 +28,33 @@ class LFUCache(object):
         :type value: int
         :rtype: void
         """
-        if len(self.cache)>=self.capacity: self.removeOneKey()
+        if key in self.cache:
+            self.cache[key]=value
+            occurency=self.freq[key]
+            self.freq[key]=occurency+1
+            self.times[occurency].remove(key)
+            if not occurency+1 in self.times:
+                self.times[occurency+1] = [key]
+            else:
+                self.times[occurency+1].append(key)
+            return
+        if len(self.cache)>=self.capacity:
+        	self.removeOneKey()
         self.cache[key]=value
-        if key in self.freq: self.freq[key] = self.freq[key]+1
-        else: self.freq[key] = 1
-        self.visitTime[key] = time.time()
+        self.freq[key] = 1
+        if 1 in self.times:
+            self.times[1].append(key)
+        else:
+            self.times[1] = [key]
         
     def removeOneKey(self):
         import pdb
-        pdb.set_trace()
-        items=self.cache.items()
-        items.sort(self.ccmp)
-        del self.cache[items[0]]
-        del self.freq[items[0]]
-        del self.visitTime[items[0]]
-        print items
-        print self.cache
-        
-    def ccmp(self, o1, o2):
-        k1,v1=o1
-        k2,v2=o2
-        if self.freq[k1] < self.freq[k2]: return 1
-        elif self.freq[k1] > self.freq[k2]: return -1
-        if self.visitTime[k1] < self.visitTime[k2]: return 1
-        elif self.visitTime[k1] > self.visitTime[k2]: return -1
-        return 0
+        #pdb.set_trace()
+        items=self.times.items()
+        key=items[0][1][0]
+        del self.cache[key]
+        del self.freq[key]
+        self.times[items[0][0]].remove(key)
 
 # Your LFUCache object will be instantiated and called as such:
 # obj = LFUCache(capacity)
@@ -56,12 +62,17 @@ class LFUCache(object):
 # obj.put(key,value)
         
 if __name__ == '__main__':
-    c=LFUCache(5)
-    c.put(7,7)
-    time.sleep(1)
-    [c.put(i,i) for i in range(10)]
-    for i in range(10):
-        print c.get(i)
+    c=LFUCache(2)
+    c.put(1,1)
+    c.put(2,2)
+    print c.get(1)
+    c.put(3,3)
+    print c.get(2)
+    print c.get(3)
+    c.put(4,4)
+    print c.get(1)
+    print c.get(3)
+    print c.get(4)
     #print s.isScramble("great","rgtae")
     #print s.isScramble("great","rgeat")
     #print s.isScramble("abc","deb")
