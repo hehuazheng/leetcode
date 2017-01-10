@@ -14,15 +14,24 @@ class LFUCache(object):
         :type key: int
         :rtype: int
         """
+        if self.capacity<=0:
+            return -1
         if key in self.cache:
             occurency=self.freq[key]
+            self.freq[key]=occurency+1
             self.times[occurency].remove(key)
-            self.times[occurency].append(key)
+            if len(self.times[occurency])==0: del self.times[occurency]
+            if occurency+1 in self.times:
+                self.times[occurency+1].append(key)
+            else:
+                self.times[occurency+1] = [key]
             return self.cache[key]
         else:
             return -1
 
     def put(self, key, value):
+        if self.capacity<=0:
+            return
         """
         :type key: int
         :type value: int
@@ -33,6 +42,7 @@ class LFUCache(object):
             occurency=self.freq[key]
             self.freq[key]=occurency+1
             self.times[occurency].remove(key)
+            if len(self.times[occurency])==0: del self.times[occurency]
             if not occurency+1 in self.times:
                 self.times[occurency+1] = [key]
             else:
@@ -48,8 +58,6 @@ class LFUCache(object):
             self.times[1] = [key]
         
     def removeOneKey(self):
-        import pdb
-        #pdb.set_trace()
         items=self.times.items()
         key=items[0][1][0]
         del self.cache[key]
@@ -62,6 +70,7 @@ class LFUCache(object):
 # obj.put(key,value)
         
 if __name__ == '__main__':
+    """
     c=LFUCache(2)
     c.put(1,1)
     c.put(2,2)
@@ -73,6 +82,20 @@ if __name__ == '__main__':
     print c.get(1)
     print c.get(3)
     print c.get(4)
+    """
+    print "sep..."
+    c2=LFUCache(3)
+    c2.put(2,2)
+    c2.put(1,1)
+    print c2.get(2)
+    print c2.get(1)
+    print c2.get(2)
+    c2.put(3,3)
+    c2.put(4,4)
+    print c2.get(3)
+    print c2.get(2)
+    print c2.get(1)
+    print c2.get(4)
     #print s.isScramble("great","rgtae")
     #print s.isScramble("great","rgeat")
     #print s.isScramble("abc","deb")
