@@ -4,34 +4,42 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        def expand(s, l, r, len1):
-            if l-1>=0 and r+1<len1:
-                if s[l-1]=='(' and s[r+1]==')':
-                    l=l-1
-                    r=r+1
-                elif:
-            pass
+        s1=list(s)
+        len1=len(s1)
         stack=[]
-        len1=len(s)
         [stack.append(i) for i in range(len1) if s[i]=='(']
-        l,r=None,None
-        k=len(stack)
-        maxlength=0
-        while True:
-            if k==0:
-                break
-            pos=stack[k]
-            k-=1
-            if pos+1>=len1:
-                continue
-            if s[pos+1]=')':
-                if l==None: l=pos
-                if r==None: r=pos+1
-                maxlength=r-
-                continue
-            
-        print stack
+        import pdb
+        #pdb.set_trace()
+        while len(stack)>0:
+            top=stack.pop()
+            if top+1<len1:
+                if s1[top+1]==')':
+                    s1[top]='o'
+                    s1[top+1]='o'
+                elif s1[top+1]!='o':
+                    continue
+                else:
+                    tmp=top
+                    while True:
+                        if tmp+1<len1 and s1[tmp+1]=='o':
+                            tmp+=1
+                        else:
+                            break
+                    if tmp+1<len1 and s1[tmp+1]==')':
+                        s1[tmp+1]='o'
+                        s1[top]='o'
+        maxlen=0
+        len2=0
+        for i in s1:
+            if i=='o':
+                len2+=1
+                if len2>maxlen: maxlen=len2
+            else:
+                len2=0
+        return maxlen
         
 if __name__ == '__main__':
     s=Solution()
-    s.longestValidParentheses(")()())")
+    print s.longestValidParentheses(")()())")
+    print s.longestValidParentheses("()()")
+    print s.longestValidParentheses("(")
