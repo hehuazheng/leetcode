@@ -6,19 +6,24 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-    def preorderTraversal(self, root):
+    def inorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
         if root==None: return []
-        stack=[root]
+        p=root
+        stack=[]
         res=[]
-        while len(stack)>0:
-            top=stack.pop()
-            res.append(top.val)
-            if top.right != None: stack.append(top.right)
-            if top.left != None: stack.append(top.left)
+        while len(stack)>0 or p!=None:
+            if p!=None:
+                stack.append(p)
+                p=p.right
+            else:
+                top=stack.pop()
+                res.append(top.val)
+                p=top.left
+        res.reverse()
         return res
         
 if __name__ == '__main__':
@@ -32,4 +37,4 @@ if __name__ == '__main__':
     s=Solution()
     import pdb
     pdb.set_trace()
-    print s.preorderTraversal(n1)
+    print s.inorderTraversal(n1)
