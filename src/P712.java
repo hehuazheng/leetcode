@@ -58,33 +58,17 @@ public class P712 {
             }
         }
 
-        String target = paths[maxI][maxJ];
         int sum = 0;
-        int j = 0;
         for (int i = 0; i < s1.length(); i++) {
-            if (j < target.length()) {
-                if (s1.charAt(i) == target.charAt(j)) {
-                    j++;
-                } else {
-                    sum += s1.charAt(i);
-                }
-            } else {
-                sum += s1.charAt(i);
-            }
+            sum += s1.charAt(i);
         }
-        j = 0;
         for (int i = 0; i < s2.length(); i++) {
-            if (j < target.length()) {
-                if (s2.charAt(i) == target.charAt(j)) {
-                    j++;
-                } else {
-                    sum += s2.charAt(i);
-                }
-            } else {
-                sum += s2.charAt(i);
-            }
+            sum += s2.charAt(i);
         }
-
+        String target = paths[maxI][maxJ];
+        for (int i = 0; i <target.length() ; i++) {
+            sum -= 2 * target.charAt(i);
+        }
         return sum;
     }
 
@@ -128,11 +112,17 @@ public class P712 {
     }
 
     public static void main(String[] args) {
-        int sum1 = new P712().minimumDeleteSum2("delete", "leet");
+        int sum1 = new P712().minimumDeleteSum("delete", "leet");
         System.out.println(sum1);
-        int sum2 = new P712().minimumDeleteSum2("sea", "eat");
+        int sum2 = new P712().minimumDeleteSum("sea", "eat");
         System.out.println(sum2);
-        int sum3 = new P712().minimumDeleteSum2("sjfqkfxqoditw", "fxymelgo");
+        int sum3 = new P712().minimumDeleteSum("sjfqkfxqoditw", "fxymelgo");
         System.out.println(sum3);
+//        int sum1 = new P712().minimumDeleteSum2("delete", "leet");
+//        System.out.println(sum1);
+//        int sum2 = new P712().minimumDeleteSum2("sea", "eat");
+//        System.out.println(sum2);
+//        int sum3 = new P712().minimumDeleteSum2("sjfqkfxqoditw", "fxymelgo");
+//        System.out.println(sum3);
     }
 }
