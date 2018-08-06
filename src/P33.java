@@ -43,57 +43,6 @@ public class P33 {
         }
         return -1;
     }
-//        if(nums.length == 0) {
-//            return -1;
-//        }
-//        int sep = dfs(nums, 0, nums.length - 1);
-//        if(sep == -1) {
-//            sep = nums.length;
-//        }
-//        int pos = binarySearch(nums, 0, sep - 1, target);
-//        if (pos != -1) {
-//            return pos;
-//        }
-//        return binarySearch(nums, sep, nums.length - 1, target);
-//    }
-//
-//    int binarySearch(int[] nums, int l, int r, int target) {
-//        if (r >= nums.length || l < 0 || l > r  || nums[r] < target || nums[l] > target ) {
-//            return -1;
-//        }
-//        if(l == r) {
-//            if(nums[l] == target) {
-//                return l;
-//            }
-//            return -1;
-//        }
-//        int mid = (l + r) / 2;
-//        if (nums[mid] == target) {
-//            return mid;
-//        } else if (nums[mid] > target) {
-//            return binarySearch(nums, l, mid, target);
-//        } else {
-//            return binarySearch(nums, mid + 1, r, target);
-//        }
-//    }
-//
-//    int dfs(int[] nums, int l, int r) {
-//        if (l >= r) {
-//            return -1;
-//        }
-//        int mid = (l + r) / 2;
-//        if (mid > 1 && nums[mid] < nums[mid - 1]) {
-//            return mid;
-//        }
-//        if (mid + 1 < nums.length && nums[mid] > nums[mid + 1]) {
-//            return mid + 1;
-//        }
-//        int pos = dfs(nums, l, mid);
-//        if (pos != -1) {
-//            return pos;
-//        }
-//        return dfs(nums, mid + 1, r);
-//    }
 
     public static void main(String[] args) {
         System.out.println(new P33().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
