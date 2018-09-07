@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-
 /**
  * Given a binary tree, flatten it to a linked list in-place.
  * <p>
@@ -36,15 +31,6 @@ import java.util.Stack;
  * TreeNode(int x) { val = x; }
  * }
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
 
 public class P114 {
     static TreeNode buildTree(String str) {
