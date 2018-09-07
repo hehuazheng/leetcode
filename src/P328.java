@@ -1,13 +1,4 @@
 public class P328 {
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode oddEvenList(ListNode head) {
         ListNode p = head;
         ListNode oddHead = new ListNode(0);

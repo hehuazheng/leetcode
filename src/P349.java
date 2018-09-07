@@ -1,5 +1,3 @@
-import util.Output;
-
 import java.util.*;
 
 public class P349 {

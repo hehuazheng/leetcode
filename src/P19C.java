@@ -18,15 +18,6 @@ import java.util.List;
  * 你能尝试使用一趟扫描实现吗？
  */
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
-
 public class P19C {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode h1 = head, h2 = head;
@@ -44,20 +35,12 @@ public class P19C {
         return head;
     }
 
-    static void output(ListNode ln) {
-        while(ln != null) {
-            System.out.print(ln.val);
-            ln = ln.next;
-        }
-        System.out.println();
-    }
-
     public static void main(String[] args) {
         ListNode ln = new ListNode(1);
         ListNode ln2 = new ListNode(2);
         ln.next = ln2;
         ln = new P19C().removeNthFromEnd(ln, 2);
-        output(ln);
+        Output.output(ln);
     }
 
 }
