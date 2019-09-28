@@ -1,9 +1,9 @@
 class Solution(object):
     def numSquares(self, n):
-        """
+        '''
         :type n: int
         :rtype: int
-        """
+        '''
         if n<=0: return 0
         tb={}
         import math

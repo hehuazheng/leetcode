@@ -9,9 +9,9 @@ class STree(object):
 class NumArray(object):
 
     def __init__(self, nums):
-        """
+        '''
         :type nums: List[int]
-        """
+        '''
         def buildtree(nums, s, e):
             if s> e: return None
             tn = STree(s, e)
@@ -25,11 +25,11 @@ class NumArray(object):
         self.root = buildtree(nums, 0, len(nums)-1)
             
     def update(self, i, val):
-        """
+        '''
         :type i: int
         :type val: int
         :rtype: void
-        """
+        '''
         def update(node, pos, val):
             if node.s == node.e:
                 node.sum = val
@@ -41,11 +41,11 @@ class NumArray(object):
         update(self.root, i, val)
         
     def sumRange(self, i, j):
-        """
+        '''
         :type i: int
         :type j: int
         :rtype: int
-        """
+        '''
         def sumRange(node, s, e):
             if node.e==e and node.s==s: return node.sum
             mid = (node.s+node.e)/2

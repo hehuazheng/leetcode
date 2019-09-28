@@ -2,10 +2,10 @@ import sys
 
 class Solution(object):
     def reverse(self, x):
-        """
+        '''
         :type x: int
         :rtype: int
-        """
+        '''
         a=0
         b=x if x > 0 else -x
         while b:

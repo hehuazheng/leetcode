@@ -1,9 +1,9 @@
 class Solution(object):
     def minimumTotal(self, triangle):
-        """
+        '''
         :type triangle: List[List[int]]
         :rtype: int
-        """
+        '''
         rows=len(triangle)
         tb=[0 for i in range(0,rows * (rows+1)/2)];
         tb[0] = triangle[0][0]

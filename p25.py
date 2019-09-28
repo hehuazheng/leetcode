@@ -6,11 +6,11 @@ class ListNode(object):
 
 class Solution(object):
     def reverseKGroup(self, head, k):
-        """
+        '''
         :type head: ListNode
         :type k: int
         :rtype: ListNode
-        """
+        '''
         previous=nHead=ListNode(0)
         node=nHead.next=head
         stack=[]

@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 public class ArrayParser {
     public static int[][] parseArray(String s) {
+        s = s.replaceAll("\\s+", "");
         int b = s.lastIndexOf('[');
         List<List<Integer>> list = new ArrayList<>();
         while (b != -1) {

@@ -1,25 +1,25 @@
 class MedianFinder:
     def __init__(self):
-        """
+        '''
         Initialize your data structure here.
-        """
+        '''
         self.data={}
         self.cnt=0
 
     def addNum(self, num):
-        """
+        '''
         Adds a num into the data structure.
         :type num: int
         :rtype: void
-        """
+        '''
         self.cnt+=1
         self.data[num]=self.data.get(num, 0)+1
 
     def findMedian(self):
-        """
+        '''
         Returns the median of current data stream
         :rtype: float
-        """
+        '''
         even=cnt%2==0
         passnum = cnt/2
         cur = 0

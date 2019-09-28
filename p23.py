@@ -1,9 +1,9 @@
 class Solution(object):
     def mergeKLists(self, lists):
-        """
+        '''
         :type lists: List[ListNode]
         :rtype: ListNode
-        """
+        '''
         if len(lists)==1:
             return lists[0]
         result=lists[0]

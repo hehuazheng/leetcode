@@ -1,9 +1,9 @@
 class Solution(object):
     def hIndex(self, citations):
-        """
+        '''
         :type citations: List[int]
         :rtype: int
-        """
+        '''
         len1 = len(citations)
         for i in range(0,len1):
             if(citations[i]>=len1-i): return len1-i

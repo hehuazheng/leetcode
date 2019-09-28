@@ -1,19 +1,19 @@
 class LFUCache(object):
 
     def __init__(self, capacity):
-        """
+        '''
         :type capacity: int
-        """
+        '''
         self.capacity=capacity
         self.cache={}
         self.freq={}
         self.times={}
 
     def get(self, key):
-        """
+        '''
         :type key: int
         :rtype: int
-        """
+        '''
         if self.capacity<=0:
             return -1
         if key in self.cache:
@@ -32,11 +32,11 @@ class LFUCache(object):
     def put(self, key, value):
         if self.capacity<=0:
             return
-        """
+        '''
         :type key: int
         :type value: int
         :rtype: void
-        """
+        '''
         if key in self.cache:
             self.cache[key]=value
             occurency=self.freq[key]
@@ -70,7 +70,7 @@ class LFUCache(object):
 # obj.put(key,value)
         
 if __name__ == '__main__':
-    """
+    '''
     c=LFUCache(2)
     c.put(1,1)
     c.put(2,2)
@@ -82,8 +82,8 @@ if __name__ == '__main__':
     print c.get(1)
     print c.get(3)
     print c.get(4)
-    """
-    print "sep..."
+    '''
+    print 'sep...'
     c2=LFUCache(3)
     c2.put(2,2)
     c2.put(1,1)
@@ -96,6 +96,6 @@ if __name__ == '__main__':
     print c2.get(2)
     print c2.get(1)
     print c2.get(4)
-    #print s.isScramble("great","rgtae")
-    #print s.isScramble("great","rgeat")
-    #print s.isScramble("abc","deb")
+    #print s.isScramble('great','rgtae')
+    #print s.isScramble('great','rgeat')
+    #print s.isScramble('abc','deb')

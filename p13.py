@@ -1,9 +1,9 @@
 class Solution(object):
     def threeSum(self, nums):
-        """
+        '''
         :type nums: List[int]
         :rtype: List[List[int]]
-        """
+        '''
         result=[]
         count0=nums.count(0)
         if count0>=3:

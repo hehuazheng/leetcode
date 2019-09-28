@@ -6,11 +6,11 @@
 
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
-        """
+        '''
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
-        """
+        '''
         if l1==None: return l2
         if l2==None: return l1
         if l1==None and l2==None: return []
@@ -43,6 +43,6 @@ if __name__ == '__main__':
     print s.mergeTwoLists([1],[2])
     print s.mergeTwoLists([1],[2,3])
     print s.mergeTwoLists([1,3],[2])
-    #print s.isScramble("great","rgtae")
-    #print s.isScramble("great","rgeat")
-    #print s.isScramble("abc","deb")
+    #print s.isScramble('great','rgtae')
+    #print s.isScramble('great','rgeat')
+    #print s.isScramble('abc','deb')

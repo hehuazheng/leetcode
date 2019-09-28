@@ -75,19 +75,19 @@ public class TreeTraversal {
 
 
     public static void main(String[] args) {
-        Tree i = new Tree('i', null, null);
-        Tree h = new Tree('h', null, null);
-        Tree g = new Tree('g', null, h);
-        Tree e = new Tree('e', null, null);
-        Tree f = new Tree('f', e, null);
-        Tree d = new Tree('d', null, null);
-        Tree c = new Tree('c', g, i);
-        Tree b = new Tree('b', d, f);
-        Tree a = new Tree('a', b, c);
-
-        TreeTraversal tt = new TreeTraversal();
-        System.out.println(tt.pre(a));
-        System.out.println(tt.mid(a));
-        System.out.println(tt.end(a));
+//        Tree i = new Tree("i", null, null);
+//        Tree h = new Tree("h", null, null);
+//        Tree g = new Tree("g", null, h);
+//        Tree e = new Tree("e", null, null);
+//        Tree f = new Tree("f", e, null);
+//        Tree d = new Tree("d", null, null);
+//        Tree c = new Tree("c", g, i);
+//        Tree b = new Tree("b", d, f);
+//        Tree a = new Tree("a", b, c);
+//
+//        TreeTraversal tt = new TreeTraversal();
+//        System.out.println(tt.pre(a));
+//        System.out.println(tt.mid(a));
+//        System.out.println(tt.end(a));
     }
 }

@@ -1,10 +1,10 @@
 class Solution(object):
     def canPartitionKSubsets(self, nums, k):
-        """
+        '''
         :type nums: List[int]
         :type k: int
         :rtype: bool
-        """
+        '''
         if len(nums) == 0 or k <= 0:
             return False
         sum = 0

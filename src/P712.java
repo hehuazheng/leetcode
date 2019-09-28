@@ -118,11 +118,11 @@ public class P712 {
         System.out.println(sum2);
         int sum3 = new P712().minimumDeleteSum("sjfqkfxqoditw", "fxymelgo");
         System.out.println(sum3);
-//        int sum1 = new P712().minimumDeleteSum2("delete", "leet");
+//        int sum1 = new P712().minimumDeleteSum2('delete', 'leet');
 //        System.out.println(sum1);
-//        int sum2 = new P712().minimumDeleteSum2("sea", "eat");
+//        int sum2 = new P712().minimumDeleteSum2('sea', 'eat');
 //        System.out.println(sum2);
-//        int sum3 = new P712().minimumDeleteSum2("sjfqkfxqoditw", "fxymelgo");
+//        int sum3 = new P712().minimumDeleteSum2('sjfqkfxqoditw', 'fxymelgo');
 //        System.out.println(sum3);
     }
 }

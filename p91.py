@@ -1,9 +1,9 @@
 class Solution(object):
     def numDecodings(self, s):
-        """
+        '''
         :type s: str
         :rtype: int
-        """
+        '''
         s1=list(s)
         i=0
         while True:
@@ -36,12 +36,12 @@ class Solution(object):
 
 if __name__ == '__main__':
     s=Solution()
-    """
-    print s.numDecodings("1000")
-    print s.numDecodings("1010")
-    print s.numDecodings("1203")
-    print s.numDecodings("12")
-    print s.numDecodings("123")
-    print s.numDecodings("1234")
-            """
-    print s.numDecodings("17")
+    '''
+    print s.numDecodings('1000')
+    print s.numDecodings('1010')
+    print s.numDecodings('1203')
+    print s.numDecodings('12')
+    print s.numDecodings('123')
+    print s.numDecodings('1234')
+            '''
+    print s.numDecodings('17')

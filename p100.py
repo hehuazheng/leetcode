@@ -7,11 +7,11 @@ class TreeNode(object):
 
 class Solution(object):
     def isSameTree(self, p, q):
-        """
+        '''
         :type p: TreeNode
         :type q: TreeNode
         :rtype: bool
-        """
+        '''
         if p==None and q!=None: return False
         if p!=None and q==None: return False
         if p==None and q==None: return True

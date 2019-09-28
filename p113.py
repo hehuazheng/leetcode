@@ -7,11 +7,11 @@ class TreeNode(object):
 
 class Solution(object):
     def pathSum(self, root, sum):
-        """
+        '''
         :type root: TreeNode
         :type sum: int
         :rtype: List[List[int]]
-        """
+        '''
         if root==None: return []
         def recursive(node, sum, path, validpaths):
             if node.left==None and node.right==None:

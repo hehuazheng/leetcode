@@ -1,10 +1,10 @@
 class Solution(object):
     def removeDuplicateLetters(self, s):
-        """
+        '''
         :type s: str
         :rtype: str
-        """
-        if len(s)==0: return ""
+        '''
+        if len(s)==0: return ''
         cmap={}
         for x in s:
             if x in cmap: cmap[x]=cmap[x]+1
@@ -37,6 +37,6 @@ if __name__ == '__main__':
     s=Solution()
 
     #print s.maxProduct([2, 3, -2, 4])
-    #print s.removeDuplicateLetters("bcabc")
-    #print s.removeDuplicateLetters("cbacdcbc")
-    print s.removeDuplicateLetters("ccacbaba")
+    #print s.removeDuplicateLetters('bcabc')
+    #print s.removeDuplicateLetters('cbacdcbc')
+    print s.removeDuplicateLetters('ccacbaba')

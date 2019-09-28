@@ -25,7 +25,7 @@ class Solution:
         recursive(root, [], res)
         res2=[]
         for x in res:
-            res2.append("->".join("{0}".format(c) for c in x))
+            res2.append('->'.join('{0}'.format(c) for c in x))
         return res2
         
 if __name__ == '__main__':

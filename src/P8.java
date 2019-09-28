@@ -34,9 +34,9 @@ public class P8 {
 
     public static void main(String[] args) {
         System.out.println(new P8().myAtoi("42"));
-        System.out.println(new P8().myAtoi("   -42"));
-        System.out.println(new P8().myAtoi("4193 with words"));
-        System.out.println(new P8().myAtoi("words and 987"));
-        System.out.println(new P8().myAtoi("-91283472332"));
+//        System.out.println(new P8().myAtoi('   -42'));
+//        System.out.println(new P8().myAtoi('4193 with words'));
+//        System.out.println(new P8().myAtoi('words and 987'));
+//        System.out.println(new P8().myAtoi('-91283472332'));
     }
 }

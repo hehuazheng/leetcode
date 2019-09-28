@@ -1,9 +1,9 @@
 class Solution(object):
     def maxCoins(self, nums):
-        """
+        '''
         :type nums: List[int]
         :rtype: int
-        """
+        '''
         vnums=[1]+[i for i in nums if i>0] +[1]
         n = len(vnums)
         dp = [[0]*n for _ in xrange(n)]

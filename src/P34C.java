@@ -35,6 +35,6 @@ public class P34C {
 //        int[] nums = {5,7,7,8,8,10};
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6, 8, 10, 10};
         int[] res = new P34C().searchRange(nums, 4);
-        System.out.println(res[0] + "," + res[1]);
+        System.out.println(res[0] + ',' + res[1]);
     }
 }

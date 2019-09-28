@@ -1,10 +1,10 @@
 class Solution(object):
     def wordBreak(self, s, wordDict):
-        """
+        '''
         :type s: str
         :type wordDict: List[str]
         :rtype: bool
-        """
+        '''
         def recursive(s, wordDict, tb):
             if s in tb: return tb[s]
             if s in wordDict:
@@ -21,7 +21,7 @@ class Solution(object):
         
 if __name__ == '__main__':
     s=Solution()
-    #print s.wordBreak("leetcode",["leet", "code"])
+    #print s.wordBreak('leetcode',['leet', 'code'])
     import pdb
     pdb.set_trace()
-    print s.wordBreak("ab",["a", "b"])
+    print s.wordBreak('ab',['a', 'b'])

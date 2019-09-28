@@ -7,27 +7,27 @@ class TreeNode(object):
 
 class Codec:
     def serialize(self, root):
-        """Encodes a tree to a single string.
+        '''Encodes a tree to a single string.
         
         :type root: TreeNode
         :rtype: str
-        """
+        '''
         def recur(node, sb):
-            if node==None: sb.append("X")
+            if node==None: sb.append('X')
             else:
                 sb.append(str(node.val))
                 recur(node.left, sb)
                 recur(node.right, sb)
         sb=[]
         recur(root, sb)
-        return ",".join(sb)
+        return ','.join(sb)
         
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
+        '''Decodes your encoded data to tree.
         
         :type data: str
         :rtype: TreeNode
-        """
+        '''
         def build_tree(items):
             val=items.pop(0)
             if val=='X':
@@ -37,7 +37,7 @@ class Codec:
                 n.left=build_tree(items)
                 n.right=build_tree(items)
                 return n
-        items=data.split(",")
+        items=data.split(',')
         return build_tree(items)
         
 if __name__ == '__main__':

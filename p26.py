@@ -1,9 +1,9 @@
 class Solution(object):
     def removeDuplicates(self, nums):
-        """
+        '''
         :type nums: List[int]
         :rtype: int
-        """
+        '''
         if(nums):
             i=0
             previous = nums[i]

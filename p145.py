@@ -7,10 +7,10 @@ class TreeNode(object):
 
 class Solution(object):
     def postorderTraversal(self, root):
-        """
+        '''
         :type root: TreeNode
         :rtype: List[int]
-        """
+        '''
         stack=[]
         p=root
         res=[]

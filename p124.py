@@ -6,10 +6,10 @@ class TreeNode(object):
 
 class Solution(object):
     def maxPathSum(self, root):
-        """
+        '''
         :type root: TreeNode
         :rtype: int
-        """
+        '''
         self.max=-2147483648
         def recursive(node):
             if node.left==None and node.right==None:

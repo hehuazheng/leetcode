@@ -1,9 +1,9 @@
 class Solution(object):
     def solveSudoku(self, board):
-        """
-        :type board: List[List[str]] ["..9748...","7........",".2.1.9...","..7...24.",".64.1.59.",".98...3..","...8.3.2.","........6","...2759.."]
+        '''
+        :type board: List[List[str]] ['..9748...','7........','.2.1.9...','..7...24.','.64.1.59.','.98...3..','...8.3.2.','........6','...2759..']
         :rtype: void Do not return anything, modify board in-place instead.
-        """
+        '''
         def next_pos(position):
             i,j=position
             j+=1

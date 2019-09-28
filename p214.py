@@ -1,9 +1,9 @@
 class Solution(object):
     def shortestPalindrome(self, s):
-        """
+        '''
         :type s: str
         :rtype: str
-        """
+        '''
         if len(s)<=1: return s
         len1=len(s)
         start=len1/2
@@ -23,7 +23,7 @@ class Solution(object):
                 if s[start-i]!=s[start+i]: break
                 i+=1
             if start-i<0:
-                print "single"
+                print 'single'
                 print start,i
                 if same>start: start=same
                 return s[start+1:][::-1]+s[start:]
@@ -40,11 +40,11 @@ class Solution(object):
         
 if __name__ == '__main__':
     s=Solution()
-    print s.shortestPalindrome("abcd")
-    print s.shortestPalindrome("aacecaaa")
-    print s.shortestPalindrome("ba")
-    print s.shortestPalindrome("abb")
-    print s.shortestPalindrome("aabba")
+    print s.shortestPalindrome('abcd')
+    print s.shortestPalindrome('aacecaaa')
+    print s.shortestPalindrome('ba')
+    print s.shortestPalindrome('abb')
+    print s.shortestPalindrome('aabba')
     import pdb
     pdb.set_trace()
-    print s.shortestPalindrome("aaaabbaa")
+    print s.shortestPalindrome('aaaabbaa')

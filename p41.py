@@ -1,9 +1,9 @@
 class Solution(object):
     def longestValidParentheses(self, s):
-        """
+        '''
         :type s: str
         :rtype: int
-        """
+        '''
         s1=list(s)
         len1=len(s1)
         stack=[]
@@ -40,6 +40,6 @@ class Solution(object):
         
 if __name__ == '__main__':
     s=Solution()
-    print s.longestValidParentheses(")()())")
-    print s.longestValidParentheses("()()")
-    print s.longestValidParentheses("(")
+    print s.longestValidParentheses(')()())')
+    print s.longestValidParentheses('()()')
+    print s.longestValidParentheses('(')
